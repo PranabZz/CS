@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int x0, y0, x1, y1, m, dy, dx, pk, pkk;
+    int x0, y0, x1, y1, m, dy, dx, pk, pkk,a;
     float xk, xkk, yk, ykk;
 
     printf("enter co-ordinate for p1 : \n");
@@ -15,6 +15,16 @@ int main()
     dy = y1 - y0;
     dx = x1 - x0;
     m = dy / dx;
+
+
+    if((dx < 0  && dy > 0) || (dx > 0 && dy < 0) ){
+        a = -1;
+    }
+    else{
+        a = 1;
+    }
+    
+
 
     if (m < 1)
     {
@@ -29,7 +39,7 @@ int main()
             if (pkk < 0)
             {
                 xkk = xk + 1;
-                ykk = yk;
+                ykk = yk ;
                 printf("%d,%d\n", (int)round(xkk), (int)round(ykk));
                 xk = xkk;
                 yk = ykk;
@@ -38,7 +48,7 @@ int main()
             else
             {
                 xkk = xk + 1;
-                ykk = yk + 1;
+                ykk = yk + a;
                 printf("%d,%d\n", (int)round(xkk), (int)round(ykk));
                 xk = xkk;
                 yk = ykk;
@@ -67,7 +77,7 @@ int main()
             }
             else
             {
-                xkk = xk + 1;
+                xkk = xk + a;
                 ykk = yk + 1;
                 printf("%d,%d\n", (int)round(xkk), (int)round(ykk));
                 xk = xkk;
